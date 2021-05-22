@@ -13,11 +13,6 @@
 		DB1E61812654BA1400255A05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E617F2654BA1400255A05 /* Main.storyboard */; };
 		DB1E61832654BA1500255A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1E61822654BA1500255A05 /* Assets.xcassets */; };
 		DB1E61862654BA1500255A05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1E61842654BA1500255A05 /* LaunchScreen.storyboard */; };
-		DB2E0D3D26595F3500EF97D7 /* photoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2E0D3826595F3500EF97D7 /* photoCollectionViewController.swift */; };
-		DB2E0D3E26595F3500EF97D7 /* showPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2E0D3926595F3500EF97D7 /* showPhotoCollectionViewController.swift */; };
-		DB2E0D3F26595F3500EF97D7 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2E0D3A26595F3500EF97D7 /* profileViewController.swift */; };
-		DB2E0D4026595F3500EF97D7 /* showPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2E0D3B26595F3500EF97D7 /* showPhotoCollectionViewCell.swift */; };
-		DB2E0D4126595F3500EF97D7 /* photoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2E0D3C26595F3500EF97D7 /* photoCollectionViewCell.swift */; };
 		DB49F6B326575034000200DA /* showPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB49F6B226575034000200DA /* showPhotoCollectionViewCell.swift */; };
 		DB49F6B626575337000200DA /* showPhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB49F6B526575337000200DA /* showPhotoCollectionViewController.swift */; };
 		DB604D3E265661B50090439D /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB604D3D265661B50090439D /* profileViewController.swift */; };
@@ -35,11 +30,6 @@
 		DB1E61822654BA1500255A05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1E61852654BA1500255A05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1E61872654BA1500255A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB2E0D3826595F3500EF97D7 /* photoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCollectionViewController.swift; sourceTree = "<group>"; };
-		DB2E0D3926595F3500EF97D7 /* showPhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showPhotoCollectionViewController.swift; sourceTree = "<group>"; };
-		DB2E0D3A26595F3500EF97D7 /* profileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
-		DB2E0D3B26595F3500EF97D7 /* showPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		DB2E0D3C26595F3500EF97D7 /* photoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB49F6B226575034000200DA /* showPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB49F6B526575337000200DA /* showPhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showPhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		DB604D3D265661B50090439D /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				DB1B4D5D265953C700309F50 /* webViewViewController.swift */,
-				DB2E0D3726595F3500EF97D7 /* Controller */,
 				DB49F6B526575337000200DA /* showPhotoCollectionViewController.swift */,
 				DB49F6B226575034000200DA /* showPhotoCollectionViewCell.swift */,
 				DB604D3D265661B50090439D /* profileViewController.swift */,
@@ -113,18 +102,6 @@
 			name = Controller;
 			path = /Users/yousun/Desktop/project/photoCollection/photoCollection/Controller;
 			sourceTree = "<absolute>";
-		};
-		DB2E0D3726595F3500EF97D7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				DB2E0D3826595F3500EF97D7 /* photoCollectionViewController.swift */,
-				DB2E0D3926595F3500EF97D7 /* showPhotoCollectionViewController.swift */,
-				DB2E0D3A26595F3500EF97D7 /* profileViewController.swift */,
-				DB2E0D3B26595F3500EF97D7 /* showPhotoCollectionViewCell.swift */,
-				DB2E0D3C26595F3500EF97D7 /* photoCollectionViewCell.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -198,17 +175,12 @@
 			files = (
 				DB49F6B626575337000200DA /* showPhotoCollectionViewController.swift in Sources */,
 				DB1B4D5E265953C700309F50 /* webViewViewController.swift in Sources */,
-				DB2E0D3F26595F3500EF97D7 /* profileViewController.swift in Sources */,
 				DB1E617A2654BA1400255A05 /* AppDelegate.swift in Sources */,
-				DB2E0D3E26595F3500EF97D7 /* showPhotoCollectionViewController.swift in Sources */,
-				DB2E0D4126595F3500EF97D7 /* photoCollectionViewCell.swift in Sources */,
-				DB2E0D3D26595F3500EF97D7 /* photoCollectionViewController.swift in Sources */,
 				DB90F3AF2654D53600F8CE55 /* photoCollectionViewCell.swift in Sources */,
 				DB604D3E265661B50090439D /* profileViewController.swift in Sources */,
 				DB1E617C2654BA1400255A05 /* SceneDelegate.swift in Sources */,
 				DB90F3AC2654D50500F8CE55 /* photoCollectionViewController.swift in Sources */,
 				DB90F3B22654F32D00F8CE55 /* igResponse.swift in Sources */,
-				DB2E0D4026595F3500EF97D7 /* showPhotoCollectionViewCell.swift in Sources */,
 				DB49F6B326575034000200DA /* showPhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
