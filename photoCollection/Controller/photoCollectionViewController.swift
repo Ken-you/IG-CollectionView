@@ -7,26 +7,35 @@
 
 import UIKit
 
+
 private let reuseIdentifier = "imagesCollectionViewCell"
+
+
 
 class photoCollectionViewController: UICollectionViewController {
     
     @IBOutlet var profileView: UIView!
     
-    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
+    @IBOutlet weak var postsLabel: UILabel!
+    @IBOutlet weak var followersLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    
+    @IBOutlet weak var introTextView: UITextView!
+    @IBOutlet weak var WebButton: UIButton!
     
     
     var igData :IgResponse?
     var igImagePost = [IgResponse.Graphql.User.Edge_owner_to_timeline_media.Edges] ()
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchIGData()
         addprofileView()
-        
+   
     }
 
     /*
@@ -47,6 +56,9 @@ class photoCollectionViewController: UICollectionViewController {
         return showPhotoCollectionViewController.init(coder: coder, userinfo: igData!, indexPath: row)
     }
     
+    @IBAction func pressBtn(_ sender: Any) {
+        
+    }
     
     
     
@@ -84,6 +96,8 @@ class photoCollectionViewController: UICollectionViewController {
     }
     
     
+    
+    
     // 解析JSON檔
     func fetchIGData() {
         
@@ -104,14 +118,22 @@ class photoCollectionViewController: UICollectionViewController {
                         let searchResponse = try decoder.decode(IgResponse.self, from: data)
                         
                         self.igData = searchResponse
-                        
+                            
                         DispatchQueue.main.async {
                             
                             self.igImagePost = (self.igData?.graphql.user.edge_owner_to_timeline_media.edges)!
                             
+                            self.userNameLabel.text = searchResponse.graphql.user.full_name
+                            self.postsLabel.text = "\(searchResponse.graphql.user.edge_owner_to_timeline_media.count)"
+                            self.followersLabel.text = "\(searchResponse.graphql.user.edge_followed_by.count)"
+                            self.followingLabel.text = "\(searchResponse.graphql.user.edge_follow.count)"
+                            self.introTextView.text = searchResponse.graphql.user.biography
+                            self.WebButton.setTitle(searchResponse.graphql.user.external_url, for: .normal)
+                            
                             self.collectionView.reloadData()
                             
                         }
+                        
                         
                     } catch  {
                         print(error)
@@ -119,7 +141,6 @@ class photoCollectionViewController: UICollectionViewController {
                 }
             }.resume()
         }
-        
     }
     
     
@@ -151,28 +172,11 @@ class photoCollectionViewController: UICollectionViewController {
     
     
     
-    //    func profile()  {
-    //
-    //        let profileimageUrl = (igData?.graphql.user.profile_pic_url)!
-    //
-    //        URLSession.shared.dataTask(with: profileimageUrl) { (data, respones, error) in
-    //
-    //            if let data = data{
-    //                DispatchQueue.main.async {
-    //
-    //                    self.userImageView.image = UIImage(data: data)
-    //
-    //                    self.WebButton.setTitle("\(String(describing: self.igData?.graphql.user.external_url))", for: .normal)
-    //                    self.introTextView.text = self.igData?.graphql.user.biography ?? ""
-    //                    self.postsLabel.text = "\(String(describing: self.igData?.graphql.user.edge_owner_to_timeline_media.count))"
-    //                    self.followersLabel.text = "\(String(describing: self.igData?.graphql.user.edge_followed_by.count))"
-    //                    self.followingLabel.text = "\(String(describing: self.igData?.graphql.user.edge_follow.count))"
-    //                }
-    //            }
-    //        }.resume()
-    //    }
+            
     
+}
     
+
     
     // MARK: UICollectionViewDelegate
 
@@ -206,4 +210,4 @@ class photoCollectionViewController: UICollectionViewController {
     }
     */
 
-}
+
