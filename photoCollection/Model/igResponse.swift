@@ -22,7 +22,7 @@ struct IgResponse:Decodable {
             
             let biography:String //自我介紹
             
-            let external_url :URL? // 作者新增的網頁連結
+            let external_url :String? // 作者新增的網頁連結
             
             let edge_follow:Edge_follow
             
