@@ -12,6 +12,7 @@ class webViewViewController: UIViewController {
 
     @IBOutlet weak var webView: WKWebView!
     
+    // 點選主頁使用者自我介紹的網址，顯示網頁
     override func viewDidLoad() {
         super.viewDidLoad()
         

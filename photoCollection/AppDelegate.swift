@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
+        // 啟動圖延遲 3 秒
         Thread.sleep(forTimeInterval: 3)
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = false

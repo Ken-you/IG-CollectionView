@@ -285,7 +285,6 @@
                             <rect key="frame" x="12" y="314" width="202" height="30"/>
                             <state key="normal" title="Button"/>
                             <connections>
-                                <action selector="pressBtn:" destination="Dth-bz-9yl" eventType="touchUpInside" id="8hE-gL-N8V"/>
                                 <segue destination="joG-7t-SPw" kind="show" id="ell-5f-AvD"/>
                             </connections>
                         </button>

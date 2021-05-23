@@ -10,8 +10,6 @@ import UIKit
 
 private let reuseIdentifier = "imagesCollectionViewCell"
 
-
-
 class photoCollectionViewController: UICollectionViewController {
     
     @IBOutlet var profileView: UIView!
@@ -35,7 +33,6 @@ class photoCollectionViewController: UICollectionViewController {
 
         fetchIGData()
         addprofileView()
-   
     }
 
     /*
@@ -56,11 +53,6 @@ class photoCollectionViewController: UICollectionViewController {
         return showPhotoCollectionViewController.init(coder: coder, userinfo: igData!, indexPath: row)
     }
     
-    @IBAction func pressBtn(_ sender: Any) {
-        
-    }
-    
-    
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -73,6 +65,7 @@ class photoCollectionViewController: UICollectionViewController {
         return igImagePost.count
     }
 
+    
     // 主頁的底下貼文圖片
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
 
@@ -125,8 +118,10 @@ class photoCollectionViewController: UICollectionViewController {
                             
                         DispatchQueue.main.async {
                             
+                            // JSON 檔內的貼文圖
                             self.igImagePost = (self.igData?.graphql.user.edge_owner_to_timeline_media.edges)!
                             
+                            // 設定 View 裡面的元件
                             self.userNameLabel.text = searchResponse.graphql.user.full_name
                             self.postsLabel.text = "\(searchResponse.graphql.user.edge_owner_to_timeline_media.count)"
                             self.followersLabel.text = "\(searchResponse.graphql.user.edge_followed_by.count)"
@@ -135,9 +130,7 @@ class photoCollectionViewController: UICollectionViewController {
                             self.WebButton.setTitle(searchResponse.graphql.user.external_url, for: .normal)
                             
                             self.collectionView.reloadData()
-                            
                         }
-                        
                         
                     } catch  {
                         print(error)
@@ -149,7 +142,7 @@ class photoCollectionViewController: UICollectionViewController {
     
     
     
-    
+    // 設定 View
     func addprofileView() {
         
         // 要使用自己設定的 Auto Layout 這個值要設成 false
