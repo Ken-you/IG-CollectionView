@@ -101,6 +101,10 @@ class photoCollectionViewController: UICollectionViewController {
     // 解析JSON檔
     func fetchIGData() {
         
+        // 正常連接上 IG 後台網址
+//        let urlStr = "https://www.instagram.com/neneko_ig/?__a=1"
+        
+        // 存放Json 在自己 Mac 當後台
         let urlStr = "http://127.0.0.1/neneko_ig.json"
         
         if let url = URL(string: urlStr){
